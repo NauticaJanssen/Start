@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>startpage-mediaserver</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1b222a">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <!--Import fonts-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600" rel="stylesheet" />
+  <!-- Import styles -->
+  <link rel="stylesheet" type="text/css" media="screen" href="css/materialize.min.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+
+  <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body onload="onPageLoad()">
+  <div class="container main-content">
+    <div class="row">
+      <div class="col s12 m9">
+        <!-- Links -->
+        <div class="row">
+          <h2>Good <span id="timeofday">Day</span>, Tim</h2>
+          <div class="col s6 m3">
+            <a href="http://youtube.com/" class="card">
+              <div class="card-image">
+                <img src="img/sonarr.png" />
+              </div>
+              <div class="card-content">
+                <span class="card-title">YouTube</span>
+              </div>
+            </a>
+          </div>
+          <div class="col s6 m3">
+            <a href="http://reddit.com/" class="card">
+              <div class="card-image">
+                <img src="img/radarr.png" />
+              </div>
+              <div class="card-content">
+                <span class="card-title">Reddit</span>
+              </div>
+            </a>
+          </div>
+          <div class="col s6 m3">
+            <a href="http://4chan.org/" class="card">
+              <div class="card-image">
+                <img src="img/sabnzbd.png" />
+              </div>
+              <div class="card-content">
+                <span class="card-title">4Chan</span>
+              </div>
+            </a>
+          </div>
+          <div class="col s6 m3">
+            <a href="https://tweakers.net/" class="card">
+              <div class="card-image">
+                <img src="img/bazarr.png" />
+              </div>
+              <div class="card-content">
+                <span class="card-title">Tweakers</span>
+              </div>
+            </a>
+          </div>
+          <div class="col s6 m3">
+            <a href="https://sintermeerten.zportal.nl/api/v2/oauth" class="card">
+              <div class="card-image">
+                <img src="img/nzbhydra.png" />
+              </div>
+              <div class="card-content">
+                <span class="card-title">Zermelo</span>
+              </div>
+            </a>
+          </div>
+          <div class="col s6 m3">
+            <a href="https://www.sintermeerten.nl/" class="card">
+              <div class="card-image">
+                <img src="img/ombi.png" />
+              </div>
+              <div class="card-content">
+                <span class="card-title">SMC</span>
+              </div>
+            </a>
+          </div>
+          <div class="col s6 m3">
+            <a href="https://servicedesk.mijnschoolnet.nl/otrs/index.pl" class="card">
+              <div class="card-image">
+                <img src="img/plex.png" />
+              </div>
+              <div class="card-content">
+                <span class="card-title">OTRS</span>
+              </div>
+            </a>
+          </div>
+		  <div class="col s6 m3">
+            <a href="https://login.microsoftonline.com/login.srf?wa=wsignin1.0&whr=mijnschoolnet.nl&wreply=https%3A%2F%2Fmijnschoolnet.sharepoint.com/sites/Sintermeerten" class="card">
+              <div class="card-image">
+                <img src="img/365.png" />
+              </div>
+              <div class="card-content">
+                <span class="card-title">Intranet</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m3">
+        <div class="date">
+          <h2 id="clock"></h2>
+          <h3 id="date"></h3>
+        </div>
+
+        <div class="links">
+          <span class="links-title">Search</span>
+          <ul class="collection">
+            <a href="https://www.google.com/">
+              <li class="collection-item">Web</li>
+            </a>
+            <a href="https://www.google.nl/imghp">
+              <li class="collection-item">Images</li>
+            </a>
+          </ul>
+        </div>
+        <div class="links">
+          <span class="links-title">Mail</span>
+          <ul class="collection">
+            <a href="https://login.live.com/">
+              <li class="collection-item">Privé</li>
+            </a>
+            <a href="https://sts.arcuscollege.nl/adfs/ls/?client-request-id=69e2cc9f-0b67-456b-bd36-0fb8701030fe&username=&wa=wsignin1.0&wtrealm=urn%3afederation%3aMicrosoftOnline&wctx=estsredirect%3d2%26estsrequest%3drQIIAY2Rv2_TQACFfXFq2oCUqGJgrBATyPFdLr74LDEkOCgtREhuiXAXlJ7PseMfZxwnjvgLGDsxVEhISCwZGOhSIfEPRAydGDoyIaaKATEhErEw9g2f3vCm792VUR2Zd-C_NNQ1Veh5SGV83f5Ltl2pvf3yLRhdD7ufSfUsrcE_J6A6zNh0wkQU8RGvJ9EC3PbzPJ2YmiameSREWBeeFzCOiV5nItZEMdTOADgHYFFqEUwoxqTVMjA0KCaI1hF2oecSrnLOmNrEiKvUhVhlkFGdr9Ytg12Uqk_a09xvrCGy4CX_WdryRBY_T8UkP5Ezy8k7lmiPrH6nPVPbONzrpU7f8B0s_DAO-hjzHs1totP55GDX6YXGtDvfDZ4y2BXjPbt54I5Hw0d2Z7BvT2LLLtpF8aDI8mHi5E2us-bMz7LH3BgLzKh7hIlVLOQrSfwoKysJsUiWsiJSngTueRn8KN-Asrm5WalJt6Qd6XcZvNtYyXbfF4vl5Wnnw683r7-extJyQyPPAle_x_i80aeDfUY7cZcQkWMjsmbBYJzY88MXztFDb4bEfWKiYwUcK8p3BVwq4NU16dPWFb65qNxsQERVqKsI7yDDhNRs4sO_0">
+              <li class="collection-item">Arcus</li>
+            </a>
+            <a href="https://outlook.office365.com/mail/inbox/id/AAQkADlhZWY2ODc5LTgyNzktNDgyMy05OTlhLThiZmMyNDZhOTc0ZAAQANdcatJhtRZHrvlDfkyznXs%3D">
+              <li class="collection-item">SMC</li>
+            </a>
+          </ul>
+        </div>
+        <div class="links">
+          <span class="links-title">Gaming</span>
+          <ul class="collection">
+            <a href="https://civilization.fandom.com/wiki/Civilizations_(Civ5)">
+              <li class="collection-item">Civs</li>
+            </a>
+            <a href="https://www.hotslogs.com/Default">
+              <li class="collection-item">Hotslogs</li>
+            </a>
+            <a href="https://ffxiv.consolegameswiki.com/wiki/FF14_Wiki">
+              <li class="collection-item">FFXIV Wiki</li>
+            </a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--JavaScript at end of body for optimized loading-->
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+
+</html>
